@@ -11,13 +11,6 @@ ATank::ATank()
 
 }
 
-void ATank::AimAt(FVector HitLocation)
-{
-	auto OurTankName = GetName();
-	UE_LOG(LogTemp, Warning, TEXT("%s Aiming at %s"), *OurTankName ,*HitLocation.ToString());
-
-}
-
 // Called when the game starts or when spawned
 void ATank::BeginPlay()
 {
