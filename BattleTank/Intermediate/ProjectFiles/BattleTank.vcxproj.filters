@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\BattleTank.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{0C6E83B6-D763-4CE3-A2D5-E735C0BBC45B}</UniqueIdentifier>
+      <UniqueIdentifier>{386CA2E6-602C-4E8D-BCD9-C75555D50074}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\BattleTank.Target.cs">
       <Filter>Source</Filter>
@@ -12,7 +12,7 @@
       <Filter>Source</Filter>
     </None>
     <Filter Include="Config">
-      <UniqueIdentifier>{BF68653D-AE80-4A29-90C9-2B10603672A6}</UniqueIdentifier>
+      <UniqueIdentifier>{9F57620E-FF52-4BD8-84EE-3F19E656A142}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -27,7 +27,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\BattleTank">
-      <UniqueIdentifier>{21EB0FDD-451D-4850-82B4-A17697804410}</UniqueIdentifier>
+      <UniqueIdentifier>{A56A08C3-3A8C-4E45-A01D-B7BF470F61E3}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\BattleTank\BattleTank.Build.cs">
       <Filter>Source\BattleTank</Filter>
@@ -45,7 +45,7 @@
       <Filter>Source\BattleTank</Filter>
     </ClInclude>
     <Filter Include="Source\BattleTank\Private">
-      <UniqueIdentifier>{8143F81E-80AD-49C4-A006-D0CC88F3228E}</UniqueIdentifier>
+      <UniqueIdentifier>{443C679A-215E-48AC-8589-B6690A43C753}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\BattleTank\Private\Tank.cpp">
       <Filter>Source\BattleTank\Private</Filter>
@@ -57,7 +57,7 @@
       <Filter>Source\BattleTank\Private</Filter>
     </ClCompile>
     <Filter Include="Source\BattleTank\Public">
-      <UniqueIdentifier>{BCC69FE1-C584-4569-A89E-456248F179F6}</UniqueIdentifier>
+      <UniqueIdentifier>{ED8F5A83-530D-437F-A41D-10C9F3C04FAC}</UniqueIdentifier>
     </Filter>
     <ClInclude Include="..\..\Source\BattleTank\Public\Tank.h">
       <Filter>Source\BattleTank\Public</Filter>
