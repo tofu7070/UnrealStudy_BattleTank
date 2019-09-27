@@ -379,10 +379,12 @@
     <ClCompile Include="..\..\Source\BattleTank\Private\Tank.cpp" />
     <ClCompile Include="..\..\Source\BattleTank\Private\TankAIController.cpp" />
     <ClCompile Include="..\..\Source\BattleTank\Private\TankAimingComponent.cpp" />
+    <ClCompile Include="..\..\Source\BattleTank\Private\TankBarrel.cpp" />
     <ClCompile Include="..\..\Source\BattleTank\Private\TankPlayerController.cpp" />
     <ClInclude Include="..\..\Source\BattleTank\Public\Tank.h" />
     <ClInclude Include="..\..\Source\BattleTank\Public\TankAIController.h" />
     <ClInclude Include="..\..\Source\BattleTank\Public\TankAimingComponent.h" />
+    <ClInclude Include="..\..\Source\BattleTank\Public\TankBarrel.h" />
     <ClInclude Include="..\..\Source\BattleTank\Public\TankPlayerController.h" />
   </ItemGroup>
   <PropertyGroup>
