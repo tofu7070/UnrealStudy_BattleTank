@@ -76,12 +76,18 @@
     <ClInclude Include="..\..\Source\BattleTank\Public\TankBarrel.h">
       <Filter>Source\BattleTank\Public</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Source\BattleTank\Public\TankTurrel.h">
+      <Filter>Source\BattleTank\Public</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Source\BattleTank\Private\TankAimingComponent.cpp">
       <Filter>Source\BattleTank\Private</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\BattleTank\Private\TankBarrel.cpp">
+      <Filter>Source\BattleTank\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\BattleTank\Private\TankTurrel.cpp">
       <Filter>Source\BattleTank\Private</Filter>
     </ClCompile>
   </ItemGroup>
