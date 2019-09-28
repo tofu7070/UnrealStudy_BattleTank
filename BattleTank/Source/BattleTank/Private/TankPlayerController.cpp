@@ -37,7 +37,7 @@ void ATankPlayerController::AimTOwardsCrosshair() {
 
 }
 //Get world location if linetrace through crosshair, If it hit the lindscape
-bool ATankPlayerController::GetSightRayHitLocation(FVector& outhitlocation) const{
+bool ATankPlayerController::GetSightRayHitLocation(FVector& HitLocation) const{
 	//Find the crosshaire postion
 	int32 ViewportSizeX, ViewportSizeY;
 	GetViewportSize(ViewportSizeX, ViewportSizeY);
@@ -47,10 +47,9 @@ bool ATankPlayerController::GetSightRayHitLocation(FVector& outhitlocation) cons
 	FVector LookDirection;
 	if (GetLookDirection(ScreenLocation, LookDirection)) {
 		//line-trane along that look direction and see what we hit (Up to max range)
-
 		//UE_LOG(LogTemp, Warning, TEXT("Look Direction %s"), *LookDirection.ToString());
 		//Get look Vector hHit Location
-		GetLookVectorHitLocation(LookDirection,outhitlocation);
+		GetLookVectorHitLocation(LookDirection, HitLocation);
 	}
 	return true;
 }

@@ -21,13 +21,13 @@ private:
 	//Start the tank moving thebarrel so that a shot would hit where
 	// the crosshair intersects the world
 	void AimTOwardsCrosshair();
-	bool GetSightRayHitLocation(FVector& OutHitLocation) const;
+	bool GetSightRayHitLocation(FVector& HitLocation) const;
 	bool GetLookDirection(FVector2D ScreenLocation, FVector& LookDirection) const;
 	bool GetLookVectorHitLocation(FVector LookDirection, FVector& HitLocation) const;
 	UPROPERTY(EditAnywhere)
 		float CrosshairXLocation = 0.5;
 	UPROPERTY(EditAnywhere)
-		float CrosshairYLocation = 0.5;
+		float CrosshairYLocation = 0.33;
 	UPROPERTY(EditAnywhere)
 		float LineTraceRange = 1000000;//10KM
 };
