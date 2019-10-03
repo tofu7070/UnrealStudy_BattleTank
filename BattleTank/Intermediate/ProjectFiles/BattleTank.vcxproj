@@ -364,7 +364,11 @@
     <NMakeOutput>..\..\Binaries\HTML5\BattleTank-HTML5-Shipping.js</NMakeOutput>
   </PropertyGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Source\BattleTank\Private\Projectile.cpp" />
+    <ClCompile Include="..\..\Source\BattleTank\Private\TankTrack.cpp" />
     <ClCompile Include="..\..\Source\BattleTank\Private\TankTurrel.cpp" />
+    <ClInclude Include="..\..\Source\BattleTank\Public\Projectile.h" />
+    <ClInclude Include="..\..\Source\BattleTank\Public\TankTrack.h" />
     <ClInclude Include="..\..\Source\BattleTank\Public\TankTurrel.h" />
     <None Include="..\..\BattleTank.uproject" />
     <None Include="..\..\Source\BattleTank.Target.cs" />
