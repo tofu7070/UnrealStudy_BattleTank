@@ -29,6 +29,6 @@ void ATankAIController::Tick(float DeltaSecond)
 	if (PlayerTank) {
 		//AIm towards the player
 		ControlTank->AimAt(PlayerTank->GetActorLocation());
-		ControlTank->Fire();
+		//ControlTank->Fire();
 	}
 }

@@ -8,6 +8,7 @@
 class UTankBarrel;
 class UTankTurrel;
 class UTankAimingComponent;
+class UTankMovementComponent;
 class AProjectile;
 
 UCLASS()
@@ -25,6 +26,8 @@ public:
 		void Fire();
 protected:
 	UTankAimingComponent* TankAimingcomponent = nullptr;
+	UPROPERTY(BlueprintReadOnly)//shoudl drag this component to the bluepint 
+	UTankMovementComponent* TankMovementcomponent = nullptr;
 private:	
 	ATank();
 	virtual void BeginPlay() override;

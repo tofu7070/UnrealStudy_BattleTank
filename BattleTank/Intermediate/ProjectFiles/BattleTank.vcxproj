@@ -365,9 +365,11 @@
   </PropertyGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Source\BattleTank\Private\Projectile.cpp" />
+    <ClCompile Include="..\..\Source\BattleTank\Private\TankMovementComponent.cpp" />
     <ClCompile Include="..\..\Source\BattleTank\Private\TankTrack.cpp" />
     <ClCompile Include="..\..\Source\BattleTank\Private\TankTurrel.cpp" />
     <ClInclude Include="..\..\Source\BattleTank\Public\Projectile.h" />
+    <ClInclude Include="..\..\Source\BattleTank\Public\TankMovementComponent.h" />
     <ClInclude Include="..\..\Source\BattleTank\Public\TankTrack.h" />
     <ClInclude Include="..\..\Source\BattleTank\Public\TankTurrel.h" />
     <None Include="..\..\BattleTank.uproject" />

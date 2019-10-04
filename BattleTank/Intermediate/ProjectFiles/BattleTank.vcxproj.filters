@@ -85,6 +85,9 @@
     <ClInclude Include="..\..\Source\BattleTank\Public\TankTrack.h">
       <Filter>Source\BattleTank\Public</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Source\BattleTank\Public\TankMovementComponent.h">
+      <Filter>Source\BattleTank\Public</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Source\BattleTank\Private\TankAimingComponent.cpp">
@@ -100,6 +103,9 @@
       <Filter>Source\BattleTank\Private</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\BattleTank\Private\TankTrack.cpp">
+      <Filter>Source\BattleTank\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\BattleTank\Private\TankMovementComponent.cpp">
       <Filter>Source\BattleTank\Private</Filter>
     </ClCompile>
   </ItemGroup>
