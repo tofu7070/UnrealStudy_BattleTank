@@ -265,7 +265,7 @@ C:\Program Files\Epic Games\UE_4.22\Engine\Source\Runtime\Core\Public\Math/Vecto
 C:\Program Files\Epic Games\UE_4.22\Engine\Source\Runtime\Core\Public\Math/Axis.h
 C:\Program Files\Epic Games\UE_4.22\Engine\Source\Runtime\Core\Public\Math/Vector4.h
 C:\Program Files\Epic Games\UE_4.22\Engine\Source\Runtime\Core\Public\Math/VectorRegister.h
-C:\Program Files\Epic Games\UE_4.22\Engine\Source\Runtime\Core\Public\Math/UnrealMathSSE.h
+C:\Program Files\Epic Games\UE_4.22\Engine\Source\Runtime\Core\Public\Math/UnrealMathFPU.h
 C:\Program Files\Epic Games\UE_4.22\Engine\Source\Runtime\Core\Public\Math/UnrealMathVectorConstants.h
 C:\Program Files\Epic Games\UE_4.22\Engine\Source\Runtime\Core\Public\Math/UnrealMathVectorCommon.h
 C:\Program Files\Epic Games\UE_4.22\Engine\Source\Runtime\Core\Public\Math/TwoVectors.h
