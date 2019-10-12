@@ -82,8 +82,4 @@ DerivedDataCache/*
 */Binaries
 */Intermediate
 */Saved
-######################
-Binaries/
-Content/StartContent/
-Intermediate/
-Saved/
+*/Content/StartContent
