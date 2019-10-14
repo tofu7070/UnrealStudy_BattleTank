@@ -3,24 +3,28 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "Tank.h"
 #include "GameFramework/PlayerController.h"
-#include "TankPlayerController.generated.h"//must be the last include
+#include "TankPlayerController.generated.h"
 
+class UTankAimingComponent;
 /**
- * 
+ * Responsible for helping the player aim.
  */
 UCLASS()
 class BATTLETANK_API ATankPlayerController : public APlayerController
 {
 	GENERATED_BODY()
+protected:
+	UFUNCTION(BlueprintImplementableEvent, Category = "Setup")
+		void FoundAimingComponent(UTankAimingComponent* AimCompRef);
+
 private:
-	ATank* GetControlledTank() const;
+	
 	virtual void Tick(float DeltaTime) override;
 	virtual void BeginPlay() override;
 	//Start the tank moving thebarrel so that a shot would hit where
 	// the crosshair intersects the world
-	void AimTOwardsCrosshair();
+	void AimTowardsCrosshair();
 	bool GetSightRayHitLocation(FVector& HitLocation) const;
 	bool GetLookDirection(FVector2D ScreenLocation, FVector& LookDirection) const;
 	bool GetLookVectorHitLocation(FVector LookDirection, FVector& HitLocation) const;

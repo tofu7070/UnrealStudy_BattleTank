@@ -104,5 +104,6 @@
     <ClInclude Include="..\..\Source\BattleTank\Public\TankTurrel.h">
       <Filter>Source\BattleTank\Public</Filter>
     </ClInclude>
+    <None Include="cpp.hint" />
   </ItemGroup>
 </Project>
