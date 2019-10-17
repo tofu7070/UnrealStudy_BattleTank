@@ -27,16 +27,18 @@ public:
 	// Called every frame
 	UFUNCTION(BlueprintCallable, Category = Setup)
 		void Initialise(UTankBarrel* BarrelToSet, UTankTurrel* TurretToSet);
-	void AimAt(FVector HitLocation, float LaunchSpeed);
 	void AimAt(FVector HitLocation);
 	UFUNCTION(BlueprintCallable, Category = Fireing)//This can be used in Blueprint
 		void Fire();
 protected:
 	// Called when the game starts
 	UPROPERTY(BlueprintReadOnly, Category = "State")
-		EFiringState FiringState = EFiringState::Aiming;
+		EFiringState FiringState = EFiringState::Reloading;
 private:
 	UTankAimingComponent();
+	virtual void BeginPlay() override;
+	virtual void TickComponent(float DeltaTime, enum ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
+	bool IsBarrelMoving();
 	void MoveBarrelTowards(FVector AimDirection);
 	UTankBarrel* Barrel = nullptr;
 	UTankTurrel* Turret = nullptr;
@@ -47,4 +49,5 @@ private:
 	//Local barrel reference for spawnimg projectile
 	float ReloadTimeInSeconds = 3.0f;
 	double LastFireTime = 0;
+	FVector AimDirection;
 };
