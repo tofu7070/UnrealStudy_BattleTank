@@ -20,10 +20,16 @@ void ATankPlayerController::BeginPlay()
 	FoundAimingComponent(AimingComponent);
 }
 void ATankPlayerController::AimTowardsCrosshair() {
+	if (!GetPawn()) 
+	{ 
+		UE_LOG(LogTemp, Warning, TEXT("NOT PAWN FOUND!"));//if not possing
+		return; 
+	}
 	auto AimingComponent = GetPawn()->FindComponentByClass<UTankAimingComponent>();
 	if (!ensure(AimingComponent)) { return; }
 	FVector HitLocation;
-	if (GetSightRayHitLocation(HitLocation)) {
+	bool bGotHitLocation = GetSightRayHitLocation(HitLocation);
+	if (bGotHitLocation) {
 		AimingComponent->AimAt(HitLocation);
 	}
 }
@@ -37,9 +43,9 @@ bool ATankPlayerController::GetSightRayHitLocation(FVector& HitLocation) const{
 	FVector LookDirection;
 	if (GetLookDirection(ScreenLocation, LookDirection)) {
 		//line-trane along that look direction and see what we hit (Up to max range)
-		GetLookVectorHitLocation(LookDirection, HitLocation);
+		return GetLookVectorHitLocation(LookDirection, HitLocation);
 	}
-	return true;
+	return false;
 }
 
 bool ATankPlayerController::GetLookDirection(FVector2D ScreenLocation, FVector& LookDirection) const
