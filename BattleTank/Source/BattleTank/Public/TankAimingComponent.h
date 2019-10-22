@@ -33,7 +33,7 @@ public:
 		void Fire();
 	EFiringState GetFireingState() const;
 	UFUNCTION(BlueprintCallable, Category = Fireing)
-		int GetRoundsLeft() const;
+		int32 GetRoundsLeft() const;
 protected:
 	// Called when the game starts
 	UPROPERTY(BlueprintReadOnly, Category = "State")
@@ -48,11 +48,14 @@ private:
 	UTankTurrel* Turret = nullptr;
 	UPROPERTY(EditDefaultsOnly, Category = Firing)
 		float LaunchSpeed = 4000.0;//40 m/s
+	UPROPERTY(EditDefaultsOnly, Category = Firing)
+		int32 RoundsLeft = 3;
+	UPROPERTY(EditDefaultsOnly, Category = Firing)
+		float ReloadTimeInSeconds = 3.0f;
 	UPROPERTY(EditDefaultsOnly, Category = Setup)
 		TSubclassOf<AProjectile> ProjectileBlueprint;
 	//Local barrel reference for spawnimg projectile
-	float ReloadTimeInSeconds = 3.0f;
+	
 	double LastFireTime = 0;
 	FVector AimDirection;
-	int RoundsLeft = 3;
 };
