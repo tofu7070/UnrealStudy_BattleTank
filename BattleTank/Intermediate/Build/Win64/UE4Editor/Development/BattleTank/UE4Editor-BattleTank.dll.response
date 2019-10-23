@@ -34,6 +34,8 @@
 /FUNCTIONPADMIN
 "F:\C++Learning\04_BattleTank\BattleTank\Intermediate\Build\Win64\BattleTankEditor\Development\Engine\SharedPCH.Engine.h.obj"
 "F:\C++Learning\04_BattleTank\BattleTank\Intermediate\Build\Win64\UE4Editor\Development\BattleTank\Projectile.cpp.obj"
+"F:\C++Learning\04_BattleTank\BattleTank\Intermediate\Build\Win64\UE4Editor\Development\BattleTank\SpawnPoint.cpp.obj"
+"F:\C++Learning\04_BattleTank\BattleTank\Intermediate\Build\Win64\UE4Editor\Development\BattleTank\SprongWheel.cpp.obj"
 "F:\C++Learning\04_BattleTank\BattleTank\Intermediate\Build\Win64\UE4Editor\Development\BattleTank\Tank.cpp.obj"
 "F:\C++Learning\04_BattleTank\BattleTank\Intermediate\Build\Win64\UE4Editor\Development\BattleTank\TankAIController.cpp.obj"
 "F:\C++Learning\04_BattleTank\BattleTank\Intermediate\Build\Win64\UE4Editor\Development\BattleTank\TankAimingComponent.cpp.obj"
@@ -47,6 +49,8 @@
 "F:\C++Learning\04_BattleTank\BattleTank\Intermediate\Build\Win64\UE4Editor\Development\BattleTank\BattleTank.init.gen.cpp.obj"
 "F:\C++Learning\04_BattleTank\BattleTank\Intermediate\Build\Win64\UE4Editor\Development\BattleTank\BattleTankGameModeBase.gen.cpp.obj"
 "F:\C++Learning\04_BattleTank\BattleTank\Intermediate\Build\Win64\UE4Editor\Development\BattleTank\Projectile.gen.cpp.obj"
+"F:\C++Learning\04_BattleTank\BattleTank\Intermediate\Build\Win64\UE4Editor\Development\BattleTank\SpawnPoint.gen.cpp.obj"
+"F:\C++Learning\04_BattleTank\BattleTank\Intermediate\Build\Win64\UE4Editor\Development\BattleTank\SprongWheel.gen.cpp.obj"
 "F:\C++Learning\04_BattleTank\BattleTank\Intermediate\Build\Win64\UE4Editor\Development\BattleTank\Tank.gen.cpp.obj"
 "F:\C++Learning\04_BattleTank\BattleTank\Intermediate\Build\Win64\UE4Editor\Development\BattleTank\TankAIController.gen.cpp.obj"
 "F:\C++Learning\04_BattleTank\BattleTank\Intermediate\Build\Win64\UE4Editor\Development\BattleTank\TankAimingComponent.gen.cpp.obj"

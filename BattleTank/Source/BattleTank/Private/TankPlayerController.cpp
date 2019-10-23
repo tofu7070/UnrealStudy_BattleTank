@@ -2,11 +2,26 @@
 
 #include "Engine/World.h"
 #include "TankAimingComponent.h"
+#include "Tank.h"
 #include "TankPlayerController.h"
 //Tick
 // Super
 
-
+void ATankPlayerController::SetPawn(APawn* InPawn)
+{
+	Super::SetPawn(InPawn);
+	if (InPawn)
+	{
+		auto PossessedTank = Cast<ATank>(InPawn);
+		if (!ensure(PossessedTank)) { return; }
+		PossessedTank->OnDeath.AddUniqueDynamic(this, &ATankPlayerController::OnPossedTankDeath);
+	}
+}
+void ATankPlayerController::OnPossedTankDeath()
+{
+	if (!GetPawn()) { return; }
+	StartSpectatingOnly();
+}
 void ATankPlayerController::Tick(float DeltaTime) {
 	Super::Tick(DeltaTime);
 	AimTowardsCrosshair();
@@ -22,7 +37,7 @@ void ATankPlayerController::BeginPlay()
 void ATankPlayerController::AimTowardsCrosshair() {
 	if (!GetPawn()) 
 	{ 
-		UE_LOG(LogTemp, Warning, TEXT("NOT PAWN FOUND!"));//if not possing
+		//UE_LOG(LogTemp, Warning, TEXT("NOT PAWN FOUND!"));//if not possing
 		return; 
 	}
 	auto AimingComponent = GetPawn()->FindComponentByClass<UTankAimingComponent>();
@@ -59,7 +74,7 @@ bool ATankPlayerController::GetLookVectorHitLocation(FVector LookDirection, FVec
 	FHitResult HitResult;
 	auto StartLocation = PlayerCameraManager->GetCameraLocation();
 	auto EndLocation = StartLocation + (LookDirection * LineTraceRange);
-	if (GetWorld()->LineTraceSingleByChannel(HitResult,StartLocation,EndLocation,ECollisionChannel::ECC_Visibility)) //line trace successed
+	if (GetWorld()->LineTraceSingleByChannel(HitResult,StartLocation,EndLocation,ECollisionChannel::ECC_Camera)) //line trace successed
 	{
 		HitLocation = HitResult.Location;
 		return true;
