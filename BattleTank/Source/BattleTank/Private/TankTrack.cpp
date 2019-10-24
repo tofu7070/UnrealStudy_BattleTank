@@ -1,6 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-
+#include "SprongWheel.h"
+#include "SpawnPoint.h"
 #include "TankTrack.h"
 UTankTrack::UTankTrack()
 {
@@ -11,15 +12,34 @@ void UTankTrack::BeginPlay()
 	Super::BeginPlay();
 	OnComponentHit.AddDynamic(this, &UTankTrack::OnHit);
 }
+TArray<ASprongWheel*> UTankTrack::GetWheels() const
+{
+	TArray<class ASprongWheel*> ResultArray;
+	TArray<USceneComponent*> Childern;
+	GetChildrenComponents(true, Childern);
+	for(USceneComponent* Child: Childern)
+	{
+		auto SpawnPointChild = Cast<USpawnPoint>(Child);
+		if (!SpawnPointChild) continue;
+
+		AActor* SpawnedChild = SpawnPointChild->GetSpawnedActor();
+		auto SprungWheel = Cast<ASprongWheel>(SpawnedChild);
+		if (!SprungWheel) continue;
+
+		ResultArray.Add(SprungWheel);
+	}
+	return ResultArray;
+}
+
 void UTankTrack::OnHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent, FVector NormalImpulse, const FHitResult& Hit) 
 {
 	//drive the tracks
 	//apply sideways force
-	ApplySidewaysForce();
-	DriveTrack();
-	CurrentThrottle = 0;
+	//ApplySidewaysForce();
+	//DriveTrack();
+	//CurrentThrottle = 0;
 }
-void UTankTrack::ApplySidewaysForce()
+void UTankTrack::ApplySidewaysForce()//no use
 {
 	auto SlippageSpeed = FVector::DotProduct(GetRightVector(), GetComponentVelocity());
 	auto DeltaTime = GetWorld()->GetDeltaSeconds();
@@ -29,18 +49,23 @@ void UTankTrack::ApplySidewaysForce()
 	TankRoot->AddForce(CorrectionForce);
 }
 
-void UTankTrack::DriveTrack()
+void UTankTrack::DriveTrack(float CurrentThrottle)
 {
-	auto ForceApplied = GetForwardVector() * CurrentThrottle * TrackMaxDrivingForce;
+	/*auto ForceApplied = GetForwardVector() * CurrentThrottle * TrackMaxDrivingForce;
 	auto ForceLocation = GetComponentLocation();
 	auto TankRoot = Cast<UPrimitiveComponent>(GetOwner()->GetRootComponent());
-	TankRoot->AddForceAtLocation(ForceApplied, ForceLocation);
+	TankRoot->AddForceAtLocation(ForceApplied, ForceLocation);*/
+	auto ForceApplied = CurrentThrottle * TrackMaxDrivingForce;
+	auto Wheels = GetWheels();
+	auto ForcePerWheel = ForceApplied / Wheels.Num();
+	for (ASprongWheel* Wheel : Wheels) 
+	{
+		Wheel->AddDrivingForce(ForcePerWheel);
+	}
 }
 
 void UTankTrack::SetThrottle(float Throttle) 
 {
-	//auto Time = GetWorld()->GetTimeSeconds();
-	//auto Name = GetName();
-	//UE_LOG(LogTemp, Warning, TEXT("%s: is moving  %f"), *Name, Throttle);
-	CurrentThrottle = FMath::Clamp<float>(CurrentThrottle + Throttle, -1, 1);
+	float CurrentThrottle = FMath::Clamp<float>(Throttle, -1, 1);
+	DriveTrack(CurrentThrottle);
 }
